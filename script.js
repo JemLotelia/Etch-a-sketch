@@ -4,7 +4,6 @@ const resetButton = document.querySelector(".reset")
 const blackButton = document.querySelector(".black")
 const randomButton = document.querySelector(".random")
 const pinkButton = document.querySelector(".pink")
-const gradualButton =document.querySelector(".gradual-black")
 const baseColor = 'white';
 let color = 'black'
 let click = true
@@ -49,7 +48,7 @@ function resetColor(){
 pinkButton.addEventListener('click', () => color = "pink")
 blackButton.addEventListener('click', () => color = "black")
 randomButton.addEventListener('click', () => color = "random")
-gradualButton.addEventListener('click', () => color = "gradual-black")
+
 
 
 function changeColor() {
@@ -70,5 +69,7 @@ document.querySelector('body').addEventListener('click', () => {
     }
     else click = true
 })
+
+
 
 gridCreation(16)
