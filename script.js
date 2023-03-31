@@ -39,7 +39,11 @@ sizeSelect.addEventListener('click', function changeSize(){
 resetButton.addEventListener('click', resetColor)
 function resetColor(){
     let resetSquares = container.querySelectorAll('div')
-    resetSquares.forEach((div) => div.style.backgroundColor = `white`);
+    resetSquares.forEach((div) => 
+    div.style.backgroundColor = `white`)
+    resetSquares.forEach((div) => 
+    div.style.opacity = `1`)
+    
     }
 
 pinkButton.addEventListener('click', () => color = "pink")
@@ -53,16 +57,9 @@ function changeColor() {
     if (color === `random`){
         this.style.backgroundColor = `hsl(${Math.random()* 360}, 100% ,50%)`
     }
-    else if (color === 'gradual-black'){
-        colorPick = "black";
-        this.style.backgroundColor = colorPick;
-        
-        if (this.style.opacity <= 0.9) {
-            this.style.opacity = +this.style.opacity + 0.1;
-        }
-    }
     else {
         this.style.backgroundColor = color
+        this.style.opacity = 1
     }
 }
 }
