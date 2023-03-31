@@ -78,6 +78,22 @@ button {
 
 @media (min-width: 600px){
     .container{
-        height: 350px;
-        width: 350px }
+        height: 550px;
+        width: 550px }
+
+    h1{
+        font-size: 5rem;
+    }
+    h6{ 
+        font-size: 1rem;
+    }
+
+    button{
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .select {
+        max-width: 500px
+    }
 }
