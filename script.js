@@ -4,6 +4,7 @@ const resetButton = document.querySelector(".reset")
 const blackButton = document.querySelector(".black")
 const randomButton = document.querySelector(".random")
 const pinkButton = document.querySelector(".pink")
+const eraserButton = document.querySelector('.eraser')
 const baseColor = 'white';
 let color = 'black'
 let click = true
@@ -48,7 +49,7 @@ function resetColor(){
 pinkButton.addEventListener('click', () => color = "pink")
 blackButton.addEventListener('click', () => color = "black")
 randomButton.addEventListener('click', () => color = "random")
-
+eraserButton.addEventListener('click', () => color = 'white')
 
 
 function changeColor() {
