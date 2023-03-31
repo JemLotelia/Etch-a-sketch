@@ -63,7 +63,7 @@ function changeColor() {
 }
 }
 
-document.querySelector('body').addEventListener('click', () => {
+document.querySelector('.container').addEventListener('click', () => {
     if (click == true){
         click = false
     }
