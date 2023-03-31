@@ -1,5 +1,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #f4f3f1e7
 }
 
 
@@ -36,7 +37,7 @@ button {
     display:flex;
     justify-content: center;
     gap: 1rem;
-    margin: 1rem
+    margin-top: 1rem;
 }
 
 .header {
@@ -49,6 +50,31 @@ button {
 .select {
     max-width: 50px
 }
+.select:hover{
+    opacity: 0.5
+}
+
+.reset{
+    background-color: rgb(222, 89, 102);
+}
+
+.pink:hover {
+    background-color: pink;
+}
+
+.random {
+    background-color: linear-
+}
+
+.random:hover{
+   background-image:  linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+.black:hover{
+    background-color: black;
+    color: white}
+
+
 
 @media (min-width: 600px){
     .container{
