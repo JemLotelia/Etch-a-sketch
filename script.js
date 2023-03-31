@@ -1,19 +1,28 @@
 const container = document.querySelector(".container");
 const sizeSelect = document.querySelector(".select")
-const baseColor = 'black';
+const resetButton = document.querySelector(".reset")
+const blackButton = document.querySelector(".black")
+const randomButton = document.querySelector(".random")
+const pinkButton = document.querySelector(".pink")
+const gradualButton =document.querySelector(".gradual-black")
+const baseColor = 'white';
+let color = 'black'
+let click = true
 
 function gridCreation (gridNumber) {
-    let squares = container.querySelectorAll('div')
-    squares.forEach((div) => div.remove());
+    let gridSquares = container.querySelectorAll('div')
+    gridSquares.forEach((div) => div.remove());
     container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`
     container.style.gridTemplateColumns = `repeat(${gridNumber}, 1fr)`
     let gridArea = gridNumber * gridNumber;
     for (i = 0; i < gridArea; i++){
-        let square = document.createElement('div');
-        square.style.backgroundColor = `${color}`;
-        container.insertAdjacentElement('beforeend', square)
-    } 
-}
+        let gridSquare = document.createElement('div');
+        gridSquare.style.backgroundColor = `${baseColor}`;
+        gridSquare.classList.add('square-style')
+        gridSquare.addEventListener('mouseover', changeColor)
+        container.insertAdjacentElement('beforeend', gridSquare)
+    } }
+
 
 
 sizeSelect.addEventListener('click', function changeSize(){
@@ -25,3 +34,44 @@ sizeSelect.addEventListener('click', function changeSize(){
     gridCreation(number)
 })
 
+
+
+resetButton.addEventListener('click', resetColor)
+function resetColor(){
+    let resetSquares = container.querySelectorAll('div')
+    resetSquares.forEach((div) => div.style.backgroundColor = `white`);
+    }
+
+pinkButton.addEventListener('click', () => color = "pink")
+blackButton.addEventListener('click', () => color = "black")
+randomButton.addEventListener('click', () => color = "random")
+gradualButton.addEventListener('click', () => color = "gradual-black")
+
+
+function changeColor() {
+    if (click){
+    if (color === `random`){
+        this.style.backgroundColor = `hsl(${Math.random()* 360}, 100% ,50%)`
+    }
+    else if (color === 'gradual-black'){
+        colorPick = "black";
+        this.style.backgroundColor = colorPick;
+        
+        if (this.style.opacity <= 0.9) {
+            this.style.opacity = +this.style.opacity + 0.1;
+        }
+    }
+    else {
+        this.style.backgroundColor = color
+    }
+}
+}
+
+document.querySelector('body').addEventListener('click', () => {
+    if (click == true){
+        click = false
+    }
+    else click = true
+})
+
+gridCreation(16)
