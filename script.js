@@ -87,7 +87,7 @@ document.querySelector('.container').addEventListener('click', () => {
         console.log(click)
     }
     else click = true
-    console.log(click)
+    
 })
 
 
